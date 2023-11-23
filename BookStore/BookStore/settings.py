@@ -32,6 +32,10 @@ INSTALLED_APPS = [
 ]
 
 AUTH_USER_MODEL = "accounts.CustomUser" # new
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
+
+
 import os
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
