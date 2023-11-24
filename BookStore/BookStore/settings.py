@@ -27,9 +27,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Local
-    "pages.apps.PagesConfig", # new
-    "accounts.apps.AccountsConfig", # new
+    "pages.apps.PagesConfig",
+    "accounts.apps.AccountsConfig",
+    # Third-party
+    "crispy_forms",
+    #"allauth",
+    #"allauth.account",
+
 ]
+
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 
 AUTH_USER_MODEL = "accounts.CustomUser" # new
 LOGIN_REDIRECT_URL = "home"
@@ -114,6 +123,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
