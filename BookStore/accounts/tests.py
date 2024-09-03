@@ -26,8 +26,6 @@ class CustomUserTest(TestCase):
         )
         self.assertEqual(admin_user.username, 'superadmin')
         self.assertEqual(admin_user.email, 'superadmin@gmail.com'),
-       #self.assertTrue(admin_user.is_active)
-       #self.assertTrue(admin_user.is_superadmin)
 
 
 class SignupPageTests(TestCase):

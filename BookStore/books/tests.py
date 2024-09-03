@@ -27,7 +27,12 @@ class BookTests(TestCase):
         self.assertTemplateUsed(response, "book/book_list.html")
 
     def test_book_detail_view(self):
-        response=self.client.get(self.book.get_absolute_url())
+        # Reverse the URL for the book_detail view
+        url = reverse('book_detail', args=[str(self.book.id)])
+
+        # Make a GET request to the URL
+        response = self.client.get(url)
+      #  response=self.client.get(self.book.reverse('book_detail'))
         no_response=self.client.get('/book_list/12345/')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(no_response.status_code, 404)
